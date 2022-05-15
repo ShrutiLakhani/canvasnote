@@ -5,9 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <div></div>
     </>
   );
 }
