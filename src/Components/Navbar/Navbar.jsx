@@ -1,7 +1,9 @@
 import React from "react";
 import "./Navbar.css";
 import { Routes, Route, Link } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 export function Navbar() {
+  const { loggedIn, setLoggedIn } = useAuth();
   console.log("Comes");
   return (
     <nav>
@@ -10,34 +12,21 @@ export function Navbar() {
           <section className="ecomm-navbar">
             <Link to="/" className="ecomm-logo-img"></Link>
             <div>
-              <input
-                className="nav-input-container fa"
-                placeholder="Search"
-              ></input>
+              <small>CanvaNote</small>
             </div>
-            <div className="nav-action-buttons">
-              <div className="dropdown">
-                <Link to="/signup">
-                  <i className="fas fa-user fa-lg"></i>
+            <nav className="nav-links">
+              {loggedIn ? (
+                <Link to="/" onClick={handleLogin}>
+                  {" "}
+                  Logout{" "}
                 </Link>
-                <div className="dropdown-content">
-                  <Link to="/cart">Orders</Link>
-                  <Link to="/wishlist">Wishlist</Link>
-                  <a href="#">Giftcards</a>
-                  <a href="#">Contact Us</a>
+              ) : (
+                <div className="auth-opts">
+                  <Link to="/login"> Login </Link>
+                  <Link to="/signup"> Sign Up </Link>
                 </div>
-              </div>
-              <div className="icon-ecomm">
-                <Link to="/wishlist">
-                  <i className="far fa-heart fa-lg"></i>
-                </Link>
-              </div>
-              <div className="icon-ecomm">
-                <Link to="/cart">
-                  <span className="material-icons">shopping_bag</span>
-                </Link>
-              </div>
-            </div>
+              )}
+            </nav>
           </section>
         </div>
       </header>
