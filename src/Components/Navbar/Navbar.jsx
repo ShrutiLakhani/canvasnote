@@ -6,7 +6,6 @@ import { useAuth } from "../../context/auth-context";
 export function Navbar() {
   const navigate = useNavigate();
   const { loggedIn, setLoggedIn } = useAuth();
-  console.log(loggedIn);
 
   const logoutHandler = () => {
     localStorage.removeItem("userToken");

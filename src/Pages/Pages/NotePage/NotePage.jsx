@@ -4,7 +4,6 @@ import "./NotePage.css";
 
 export function NotePage() {
   const { loggedIn, setLoggedIn } = useAuth();
-  console.log(loggedIn);
   return (
     <>
       <div>

@@ -22,7 +22,6 @@ export function SignupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Hello");
     sendSignUpData(signUpData);
   };
 
@@ -34,7 +33,6 @@ export function SignupPage() {
         const userToken = data.encodedToken;
         setLoggedIn(true);
         localStorage.setItem("userToken", userToken);
-        console.log("Hi");
         navigate("/note");
       }
     } catch (error) {

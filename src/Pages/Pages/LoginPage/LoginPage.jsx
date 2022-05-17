@@ -30,8 +30,6 @@ export function LoginPage() {
   const submitLoginData = async (loginData) => {
     try {
       const response = await axios.post("/api/auth/login", loginData);
-      console.log(response);
-      console.log("Comes here too");
       if (response.status === 200) {
         setLoggedIn(true);
         const userToken = response.data.encodedToken;
