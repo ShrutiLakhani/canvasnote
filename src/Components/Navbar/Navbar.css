@@ -48,18 +48,9 @@
 }
 
 .nav-action-buttons {
-  margin-left: auto;
   display: flex;
-  gap: 1.2rem;
+  gap: 2rem;
   margin-right: 1rem;
-  align-items: center;
-}
-
-.nav-input-container {
-  margin-left: 25rem;
-  margin-right: 6rem;
-  width: 80%;
-  border-radius: 5px;
 }
 
 .ecomm-logo-img {
@@ -74,34 +65,8 @@
   margin-left: 1rem;
   margin-top: 0.8rem;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: -500%;
-  background-color: var(--main-background-color);
-  min-width: 10rem;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: var(--component-black-color);
-  padding: 0.75rem 1rem;
+.nav-links {
+  display: flex;
+  margin-left: auto;
   text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--drop-hover-color);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }

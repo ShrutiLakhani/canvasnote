@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
       setLoggedIn(true);
     }
   }, [userToken]);
+  console.log(userToken);
 
   return (
     <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
