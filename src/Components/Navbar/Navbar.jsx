@@ -6,15 +6,12 @@ import { useAuth } from "../../context/auth-context";
 export function Navbar() {
   const navigate = useNavigate();
   const { loggedIn, setLoggedIn } = useAuth();
+  console.log(loggedIn);
 
   const logoutHandler = () => {
     localStorage.removeItem("userToken");
-    setLoggedIn(true);
+    setLoggedIn(false);
     navigate("/");
-  };
-
-  const handleLogin = (e) => {
-    loggedIn ? logoutHandler : navigate("/");
   };
 
   return (
@@ -27,17 +24,16 @@ export function Navbar() {
               <small>CanvaNote</small>
             </div>
             <nav className="nav-links">
-              {/* {loggedIn ? (
-                <Link to="/" onClick={handleLogin}>
-                  {" "}
-                  Logout{" "}
+              {loggedIn ? (
+                <Link to="/" onClick={() => setLoggedIn(false)}>
+                  Logout
                 </Link>
-              ) : ( */}
-              <div className="nav-action-buttons">
-                <Link to="/login"> Login </Link>
-                <Link to="/signup"> Sign Up </Link>
-              </div>
-              {/* )} */}
+              ) : (
+                <div className="nav-action-buttons">
+                  <Link to="/login"> Login </Link>
+                  <Link to="/signup"> Sign Up </Link>
+                </div>
+              )}
             </nav>
           </section>
         </div>

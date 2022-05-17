@@ -9,13 +9,6 @@ const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const userToken = localStorage.getItem("userToken");
 
-  useEffect(() => {
-    if (userToken) {
-      setLoggedIn(true);
-    }
-  }, [userToken]);
-  console.log(userToken);
-
   return (
     <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
       {children}

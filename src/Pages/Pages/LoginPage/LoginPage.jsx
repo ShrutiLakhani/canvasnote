@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/auth-context";
 import "./LoginPage.css";
 
 export function LoginPage() {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loginError, setLoginError] = useState("");
+  const { loggedIn, setLoggedIn } = useAuth();
 
   const testUser = {
     email: "adarshbalika@gmail.com",
@@ -31,6 +33,7 @@ export function LoginPage() {
       console.log(response);
       console.log("Comes here too");
       if (response.status === 200) {
+        setLoggedIn(true);
         const userToken = response.data.encodedToken;
         localStorage.setItem("userToken", userToken);
         navigate("/note");

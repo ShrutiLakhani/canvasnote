@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../../../context/auth-context";
 
 export function SignupPage() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export function SignupPage() {
     email: "",
     password: "",
   });
+  const { loggedIn, setLoggedIn } = useAuth();
   const setUserData = (name) => {
     return ({ target: { value } }) => {
       setSignUpData((oldValues) => ({ ...oldValues, [name]: value }));
@@ -30,6 +32,7 @@ export function SignupPage() {
       if (response.status === 201) {
         const { data } = response;
         const userToken = data.encodedToken;
+        setLoggedIn(true);
         localStorage.setItem("userToken", userToken);
         console.log("Hi");
         navigate("/note");
