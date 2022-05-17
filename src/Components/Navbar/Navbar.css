@@ -51,6 +51,7 @@
   display: flex;
   gap: 2rem;
   margin-right: 1rem;
+  text-decoration: none;
 }
 
 .ecomm-logo-img {
@@ -69,4 +70,10 @@
   display: flex;
   margin-left: auto;
   text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+.logout-btn {
+  margin-right: 2rem;
 }

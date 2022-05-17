@@ -24,7 +24,11 @@ export function Navbar() {
             </div>
             <nav className="nav-links">
               {loggedIn ? (
-                <Link to="/" onClick={() => setLoggedIn(false)}>
+                <Link
+                  to="/"
+                  className="logout-btn"
+                  onClick={() => setLoggedIn(false)}
+                >
                   Logout
                 </Link>
               ) : (
