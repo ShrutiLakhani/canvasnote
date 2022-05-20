@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import { useAuth } from "../../../context/auth-context";
+import react from "react";
+import { useState } from "react";
+import { Sidebar, Navbar, NoteCard } from "../../../Components";
 import "./NotePage.css";
 
 export function NotePage() {
-  const { loggedIn, setLoggedIn } = useAuth();
+  console.log("HI");
+
   return (
-    <>
-      <div>
-        <h1>This is a Note Page</h1>
-      </div>
-    </>
+    <div className="style-notepage">
+      <Sidebar />
+      <NoteCard />
+    </div>
   );
 }

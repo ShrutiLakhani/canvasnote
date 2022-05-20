@@ -34,7 +34,7 @@ export function LoginPage() {
         setLoggedIn(true);
         const userToken = response.data.encodedToken;
         localStorage.setItem("userToken", userToken);
-        navigate("/note");
+        navigate("/home");
       }
     } catch (error) {
       setLoginError("An error occurred.");

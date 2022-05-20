@@ -1,7 +1,16 @@
 import "./App.css";
 import { Navbar } from "./Components/index.js";
 import { Routes, Route, Link } from "react-router-dom";
-import { LoginPage, SignupPage, HomePage, NotePage } from "./Pages/Pages/index";
+import {
+  LoginPage,
+  SignupPage,
+  HomePage,
+  LandingPage,
+  NotePage,
+  LabelPage,
+  ArchivePage,
+  TrashPage,
+} from "./Pages/Pages/index";
 function App() {
   return (
     <>
@@ -10,8 +19,12 @@ function App() {
         <Routes>
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="home" element={<HomePage />} />
           <Route path="note" element={<NotePage />} />
+          <Route path="label" element={<LabelPage />} />
+          <Route path="archive" element={<ArchivePage />} />
+          <Route path="trash" element={<TrashPage />} />
         </Routes>
       </div>
     </>
