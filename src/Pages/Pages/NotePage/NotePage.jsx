@@ -4,12 +4,12 @@ import { Sidebar, Navbar, NoteCard } from "../../../Components";
 import "./NotePage.css";
 
 export function NotePage() {
-  console.log("HI");
-
   return (
     <div className="style-notepage">
       <Sidebar />
+      {/* <div className="container-input-notes"> */}
       <NoteCard />
+      {/* </div> */}
     </div>
   );
 }

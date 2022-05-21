@@ -1,0 +1,28 @@
+.palette-style {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.palette-btn {
+  position: relative;
+  display: inline;
+  z-index: 3;
+}
+.container-palette {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 1rem;
+  width: 20rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.palette-box {
+  width: 2em;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.display-none {
+  display: none;
+}

@@ -1,3 +1,11 @@
 .style-notepage {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 4rem;
+}
+.container-input-notes {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
