@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
-    <aside className="style-sidebar">
+    <aside>
       <ul>
         <li className="style-list-items">
           <Link to="/home" className="style-list-items-icon">
