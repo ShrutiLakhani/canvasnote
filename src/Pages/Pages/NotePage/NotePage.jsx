@@ -1,15 +1,23 @@
 import react from "react";
 import { useState } from "react";
-import { Sidebar, Navbar, NoteCard } from "../../../Components";
+import { Sidebar, Navbar, DisplayNote, NoteCard } from "../../../Components";
 import "./NotePage.css";
+import { useNote } from "../../../context/note-context";
 
 export function NotePage() {
+  const { notes, setNotes } = useNote();
+  console.log(notes);
   return (
-    <div className="style-notepage">
-      <Sidebar />
-      {/* <div className="container-input-notes"> */}
-      <NoteCard />
-      {/* </div> */}
-    </div>
+    <>
+      <div className="style-notepage">
+        <Sidebar />
+        <NoteCard />
+        <div>
+          {notes.map((item) => (
+            <DisplayNote {...item} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

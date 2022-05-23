@@ -2,17 +2,24 @@ import react from "react";
 import { useState } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import "./NoteCard.css";
+import { useNote } from "../../context/note-context";
 
-export function NoteCard({ edit }) {
+export function NoteCard({ item, edit }) {
+  const { notes, setNotes, addNote, deleteNote } = useNote();
   const [noteCard, setNoteCard] = useState({
     title: "",
     description: "",
     tag: "Tag",
     priority: "Priority",
+    date: "",
     selectedBackgroundColor: "PURPLE",
   });
 
-  const handleAddClick = () => {};
+  const handleAddNote = (e, value) => {
+    addNote(noteCard);
+    setNoteCard({ title: "", description: "", date: "", color: "" });
+  };
+  console.log(noteCard);
   return (
     <>
       <div
@@ -75,7 +82,7 @@ export function NoteCard({ edit }) {
             />
             <button
               className="primary-button-float-icon add-note-btn"
-              onClick={handleAddClick}
+              onClick={(e) => handleAddNote(e, noteCard)}
             >
               +
             </button>

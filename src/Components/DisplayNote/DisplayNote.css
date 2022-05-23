@@ -1,0 +1,43 @@
+.style-notecard-area {
+  width: 40rem;
+  height: fit-content;
+  border: 2px solid none;
+  position: relative;
+  margin-top: 3rem;
+  background-color: transparent;
+}
+.container-note-card {
+  background-color: transparent;
+}
+
+.style-notecard-title,
+.style-notecard-body {
+  width: 100%;
+  border: none;
+  padding-right: 2rem;
+  outline: none;
+  word-wrap: break-word;
+  resize: none;
+}
+.style-notecard-title {
+  height: 1rem;
+}
+.style-notecard-body {
+  height: 4rem;
+}
+.card-bottom-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-palette {
+  position: absolute;
+  font-size: 5rem;
+}
+.select-dropdown-label {
+  padding: 10px;
+}
+.primary-button-float-icon .add-note-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
