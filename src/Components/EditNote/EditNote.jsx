@@ -16,6 +16,7 @@ export function EditNote(item, edit) {
     setEditDisplayNote,
     setEditAddNote,
   } = item;
+  console.log("id", _id);
   const { editNote } = useNote();
   const [editCard, setEditCard] = useState({
     title: title,
@@ -26,7 +27,7 @@ export function EditNote(item, edit) {
     // selectedBackgroundColor: selectedBackgroundColor,
   });
 
-  const handleEdit = (editData, e, id) => {
+  const handleEdit = (e, editData, id) => {
     console.log("Error-1");
     editNote(id, editData);
     console.log("Error-2");

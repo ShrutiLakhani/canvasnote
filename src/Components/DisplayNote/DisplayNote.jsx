@@ -15,6 +15,7 @@ export function DisplayNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
+  console.log("display-id", _id);
   const handleAddtoTrash = (id) => {
     console.log("aana padega");
     console.log("editNoteValue", editNoteValue);

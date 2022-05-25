@@ -37,8 +37,6 @@ const NoteProvider = ({ children }) => {
         const {
           data: { notes },
         } = response;
-        console.log(response);
-        console.log(notes);
         setNotes(notes);
       }
     } catch (error) {
@@ -46,12 +44,14 @@ const NoteProvider = ({ children }) => {
     }
   };
 
-  const editNote = async (id, noteText) => {
+  const editNote = async (noteId, note) => {
     const token = localStorage.getItem("userToken");
+    console.log("note", note);
+    console.log("noteId", noteId);
     try {
       const response = await axios.post(
-        `api/notes/${id}`,
-        { note: noteText },
+        `api/notes/${noteId}`,
+        { note: note },
         {
           headers: { authorization: token },
         }
