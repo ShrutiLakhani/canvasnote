@@ -9,3 +9,10 @@
   justify-content: center;
   align-items: center;
 }
+.btn-note > a {
+  color: var(--component-white-color);
+}
+.btn-note {
+  margin: 1rem 5rem;
+  padding: 1rem;
+}

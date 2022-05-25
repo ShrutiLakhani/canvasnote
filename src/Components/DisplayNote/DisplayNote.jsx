@@ -10,11 +10,24 @@ export function DisplayNote(item) {
     priority,
     selectedBackgroundColor,
     date,
+    editNoteValue,
+    setEditNoteValue,
+    setEditAddNote,
+    setEditDisplayNote,
   } = item;
   const handleAddtoTrash = (id) => {
     console.log("aana padega");
-    console.log(notes);
+    console.log("editNoteValue", editNoteValue);
     setNotes(notes.filter((note) => note._id !== id));
+  };
+  const handleEdit = (editData) => {
+    console.log("editData", editData);
+    console.log("here it comes");
+    console.log("editNoteValue", editNoteValue);
+    setEditNoteValue(editData);
+    console.log("editData", editData);
+    setEditAddNote(false);
+    setEditDisplayNote(true);
   };
   return (
     <>
@@ -39,7 +52,7 @@ export function DisplayNote(item) {
           <button onClick={() => handleAddtoTrash(_id)}>
             <span class="material-symbols-outlined">delete</span>
           </button>
-          <button>
+          <button onClick={() => handleEdit(item)}>
             <span class="material-symbols-outlined">edit_note</span>
           </button>
         </div>

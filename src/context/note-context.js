@@ -45,8 +45,31 @@ const NoteProvider = ({ children }) => {
       console.log("error", error);
     }
   };
+
+  const editNote = async (id, noteText) => {
+    const token = localStorage.getItem("userToken");
+    try {
+      const response = await axios.post(
+        `api/notes/${id}`,
+        { note: noteText },
+        {
+          headers: { authorization: token },
+        }
+      );
+      if (response.status === 201) {
+        const {
+          data: { notes },
+        } = response;
+        setNotes(notes);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <NoteContext.Provider value={{ notes, setNotes, addNote, deleteNote }}>
+    <NoteContext.Provider
+      value={{ notes, setNotes, addNote, deleteNote, editNote }}
+    >
       {children}
     </NoteContext.Provider>
   );

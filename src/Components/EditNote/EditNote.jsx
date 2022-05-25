@@ -1,60 +1,74 @@
+import "./EditNote.css";
 import react from "react";
 import { useState } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import "./NoteCard.css";
 import { useNote } from "../../context/note-context";
 
-export function NoteCard(item, edit) {
-  const { setEditAddNote } = item;
-  const { notes, setNotes, addNote, deleteNote } = useNote();
-  const [noteCard, setNoteCard] = useState({
-    title: "",
-    description: "",
-    tag: "Tag",
-    priority: "Priority",
-    date: "",
-    selectedBackgroundColor: "PURPLE",
+export function EditNote(item, edit) {
+  const {
+    _id,
+    title,
+    description,
+    tag,
+    priority,
+    selectedBackgroundColor,
+    date,
+    setEditDisplayNote,
+    setEditAddNote,
+  } = item;
+  const { editNote } = useNote();
+  const [editCard, setEditCard] = useState({
+    title: title,
+    description: description,
+    tag: tag,
+    priority: priority,
+    date: date,
+    // selectedBackgroundColor: selectedBackgroundColor,
   });
 
-  const handleAddNote = (e, value) => {
-    addNote(noteCard);
-    setNoteCard({ title: "", description: "", date: "", color: "" });
-    setEditAddNote(false);
+  const handleEdit = (editData, e, id) => {
+    console.log("Error-1");
+    editNote(id, editData);
+    console.log("Error-2");
+    setEditDisplayNote(false);
   };
-  console.log(noteCard);
+  //   const handleAddNote = (e, value) => {
+  //     addNote(noteCard);
+  //     setNoteCard({ title: "", description: "", date: "", color: "" });
+  //   };
   return (
     <>
       <div
         className="style-notecard-area"
-        style={{ backgroundColor: noteCard.selectedBackgroundColor }}
+        style={{ backgroundColor: selectedBackgroundColor }}
       >
         <div className="container-notecard">
           <textarea
             type="text"
             row="1"
-            value={noteCard.title}
+            value={editCard.title}
             className="style-notecard-title"
             placeholder="Title"
             onChange={(e) => {
-              setNoteCard({ ...noteCard, title: e.target.value });
+              setEditCard({ ...editCard, title: e.target.value });
             }}
           ></textarea>
           <textarea
             type="text"
             row="2"
-            value={noteCard.description}
+            value={editCard.description}
             className="style-notecard-body"
             placeholder="Add a note..."
             onChange={(e) => {
-              setNoteCard({ ...noteCard, description: e.target.value });
+              setEditCard({ ...editCard, description: e.target.value });
             }}
           ></textarea>
           <div className="card-bottom-section">
             <select
               ClassName="select-dropdown-label"
-              value={noteCard.tag}
+              value={editCard.tag}
               onChange={(e) => {
-                setNoteCard({ ...noteCard, tag: e.target.value });
+                setEditCard({ ...editCard, tag: e.target.value });
               }}
             >
               <option value="Label">Select Labels</option>
@@ -66,9 +80,9 @@ export function NoteCard(item, edit) {
             </select>
             <select
               ClassName="select-dropdown-priority"
-              value={noteCard.priority}
+              value={editCard.priority}
               onChange={(e) => {
-                setNoteCard({ ...noteCard, priority: e.target.value });
+                setEditCard({ ...editCard, priority: e.target.value });
               }}
             >
               <option value="">Select Priority</option>
@@ -78,15 +92,15 @@ export function NoteCard(item, edit) {
             </select>
 
             <ColorPalette
-              noteCard={noteCard}
-              setNoteCard={setNoteCard}
+              noteCard={editCard}
+              setNoteCard={setEditCard}
               edit={edit}
             />
             <button
               className="primary-button-float-icon add-note-btn"
-              onClick={(e) => handleAddNote(e, noteCard)}
+              onClick={(e) => handleEdit(e, editCard, _id)}
             >
-              +
+              Done
             </button>
           </div>
         </div>
