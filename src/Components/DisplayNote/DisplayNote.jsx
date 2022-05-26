@@ -15,18 +15,11 @@ export function DisplayNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
-  console.log("display-id", _id);
   const handleAddtoTrash = (id) => {
-    console.log("aana padega");
-    console.log("editNoteValue", editNoteValue);
     setNotes(notes.filter((note) => note._id !== id));
   };
   const handleEdit = (editData) => {
-    console.log("editData", editData);
-    console.log("here it comes");
-    console.log("editNoteValue", editNoteValue);
     setEditNoteValue(editData);
-    console.log("editData", editData);
     setEditAddNote(false);
     setEditDisplayNote(true);
   };
@@ -37,25 +30,31 @@ export function DisplayNote(item) {
         style={{ backgroundColor: selectedBackgroundColor }}
         key={_id}
       >
-        <div className="input-container">
-          <h5>{title}</h5>
-          <p>{description}</p>
+        <div className="note-input-container">
+          <h5 className="note-title">{title}</h5>
+          <p className="note-description">{description}</p>
         </div>
-        <div className="card-bottom-section">
-          <div className="select-dropdown-label">{tag}</div>
-          <div className="select-dropdown-priority">{priority}</div>
-          <div>{date}</div>
-        </div>
-        <div>
-          <button>
+        <div className="note-card-bottom-section">
+          <div className="dropdown-section">
+            <div className="select-dropdown-label">{tag}</div>
+            <div className="select-dropdown-priority">{priority}</div>
+            {/* <div>{date}</div> */}
+          </div>
+          <div className="btn-section">
             <span class="material-symbols-outlined">archive</span>
-          </button>
-          <button onClick={() => handleAddtoTrash(_id)}>
-            <span class="material-symbols-outlined">delete</span>
-          </button>
-          <button onClick={() => handleEdit(item)}>
-            <span class="material-symbols-outlined">edit_note</span>
-          </button>
+            <span
+              class="material-symbols-outlined"
+              onClick={() => handleAddtoTrash(_id)}
+            >
+              delete
+            </span>
+            <span
+              class="material-symbols-outlined"
+              onClick={() => handleEdit(item)}
+            >
+              edit_note
+            </span>
+          </div>
         </div>
       </div>
     </>

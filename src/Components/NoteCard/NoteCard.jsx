@@ -13,7 +13,7 @@ export function NoteCard(item, edit) {
     tag: "Tag",
     priority: "Priority",
     date: "",
-    selectedBackgroundColor: "PURPLE",
+    selectedBackgroundColor: "#D5BDCB",
   });
 
   const handleAddNote = (e, value) => {
@@ -51,13 +51,13 @@ export function NoteCard(item, edit) {
           ></textarea>
           <div className="card-bottom-section">
             <select
-              ClassName="select-dropdown-label"
+              ClassName="notecard-select-dropdown-label"
               value={noteCard.tag}
               onChange={(e) => {
                 setNoteCard({ ...noteCard, tag: e.target.value });
               }}
             >
-              <option value="Label">Select Labels</option>
+              <option value="Label">Select Label</option>
               <option value="Home">Home</option>
               <option value="Work">Work</option>
               <option value="Personal">Personal</option>
@@ -65,7 +65,7 @@ export function NoteCard(item, edit) {
               <option value="Completed">Completed</option>
             </select>
             <select
-              ClassName="select-dropdown-priority"
+              ClassName="notecard-select-dropdown-priority"
               value={noteCard.priority}
               onChange={(e) => {
                 setNoteCard({ ...noteCard, priority: e.target.value });

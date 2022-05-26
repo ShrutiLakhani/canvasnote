@@ -16,7 +16,6 @@
   border: none;
   padding-right: 2rem;
   outline: none;
-  word-wrap: break-word;
   resize: none;
 }
 .style-notecard-title {
@@ -24,6 +23,7 @@
 }
 .style-notecard-body {
   height: 4rem;
+  white-space: pre-wrap;
 }
 .card-bottom-section {
   display: flex;
@@ -34,10 +34,7 @@
   position: absolute;
   font-size: 5rem;
 }
-.select-dropdown-label {
-  padding: 10px;
-}
-.primary-button-float-icon .add-note-btn {
+
+.add-note-btn {
   font-size: 1rem;
-  padding: 0.5rem;
 }

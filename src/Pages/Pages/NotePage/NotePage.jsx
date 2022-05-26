@@ -23,18 +23,35 @@ export function NotePage() {
   return (
     <>
       <div className="style-notepage">
-        <Sidebar />
-        <h2>Your Notes</h2>
-        {editDisplayNote ? (
-          <EditNote
-            setEditDisplayNote={setEditDisplayNote}
-            {...editNoteValue}
-          />
-        ) : (
-          ""
-        )}
-        {editAddNote ? <NoteCard setEditAddNote={setEditAddNote} /> : ""}
-        <div>
+        <h2 className="main-page-title">Your Notes</h2>
+
+        <div className="note-content-container">
+          <div>
+            <Sidebar />
+            <button
+              className="btn-primary btn-note"
+              onClick={() => {
+                setEditAddNote(true);
+                setEditDisplayNote(false);
+              }}
+            >
+              <Link to="/note">ADD NOTE</Link>
+            </button>
+          </div>
+          <div className="note-edit-container">
+            {editDisplayNote ? (
+              <EditNote
+                setEditDisplayNote={setEditDisplayNote}
+                {...editNoteValue}
+              />
+            ) : (
+              ""
+            )}
+            {editAddNote ? <NoteCard setEditAddNote={setEditAddNote} /> : ""}
+          </div>
+        </div>
+
+        <div className="note-list">
           {notes.map((item) => (
             <DisplayNote
               {...item}
@@ -45,15 +62,6 @@ export function NotePage() {
             />
           ))}
         </div>
-        <button
-          className="btn-primary btn-note"
-          onClick={() => {
-            setEditAddNote(true);
-            setEditDisplayNote(false);
-          }}
-        >
-          <Link to="/note">ADD NOTE</Link>
-        </button>
       </div>
     </>
   );

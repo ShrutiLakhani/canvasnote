@@ -1,43 +1,55 @@
-.style-notecard-area {
-  width: 40rem;
-  height: fit-content;
-  border: 2px solid none;
-  position: relative;
-  margin-top: 3rem;
-  background-color: transparent;
+.display-note {
+  margin: 0 0 2rem 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
 }
-.container-note-card {
-  background-color: transparent;
+.note-input-container {
+  align-items: center;
+  background-color: var(--component-container-color);
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
 }
 
-.style-notecard-title,
-.style-notecard-body {
-  width: 100%;
-  border: none;
-  padding-right: 2rem;
-  outline: none;
-  word-wrap: break-word;
-  resize: none;
-}
-.style-notecard-title {
+.note-title {
   height: 1rem;
 }
-.style-notecard-body {
+.note-desciption {
   height: 4rem;
+  white-space: pre-wrap;
 }
-.card-bottom-section {
+.note-card-bottom-section {
+  margin-top: 7rem;
   display: flex;
-  justify-content: space-between;
+  margin-left: auto;
 }
 
 .color-palette {
   position: absolute;
   font-size: 5rem;
 }
-.select-dropdown-label {
-  padding: 10px;
+.btn-section {
+  display: flex;
+  gap: 5px;
+  border: none;
 }
-.primary-button-float-icon .add-note-btn {
-  font-size: 1rem;
-  padding: 0.5rem;
+.select-dropdown-label {
+  padding: 2px 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.select-dropdown-priority {
+  padding: 2px 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.dropdown-section {
+  display: flex;
+  gap: 1rem;
+  margin-right: 3rem;
 }
