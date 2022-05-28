@@ -6,6 +6,7 @@ import {
   DisplayNote,
   NoteCard,
   EditNote,
+  TrashNote,
 } from "../../../Components";
 import "./NotePage.css";
 import { useNote } from "../../../context/note-context";
@@ -24,7 +25,7 @@ export function NotePage() {
     <>
       <div className="style-notepage">
         <h2 className="main-page-title">Your Notes</h2>
-
+        <div class="divider-underline"></div>
         <div className="note-content-container">
           <div>
             <Sidebar />

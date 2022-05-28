@@ -27,10 +27,10 @@ const NoteProvider = ({ children }) => {
     }
   };
 
-  const deleteNote = async (id) => {
+  const deleteNote = async (noteId) => {
     const token = localStorage.getItem("userToken");
     try {
-      const response = await axios.delete("api/notes/${id}", {
+      const response = await axios.delete("api/notes/${noteId}", {
         headers: { authorization: token },
       });
       if (response.status === 200) {

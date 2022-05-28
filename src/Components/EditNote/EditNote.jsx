@@ -28,15 +28,10 @@ export function EditNote(item, edit) {
   });
 
   const handleEdit = (e, editData, id) => {
-    console.log("Error-1");
     editNote(id, editData);
-    console.log("Error-2");
     setEditDisplayNote(false);
   };
-  //   const handleAddNote = (e, value) => {
-  //     addNote(noteCard);
-  //     setNoteCard({ title: "", description: "", date: "", color: "" });
-  //   };
+
   return (
     <>
       <div

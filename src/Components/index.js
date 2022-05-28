@@ -5,3 +5,5 @@ export { NoteCard } from "./NoteCard/NoteCard";
 export { ColorPalette } from "./ColorPalette/ColorPalette";
 export { DisplayNote } from "./DisplayNote/DisplayNote";
 export { EditNote } from "./EditNote/EditNote";
+export { TrashNote } from "./TrashNote/TrashNote";
+export { ArchiveNote } from "./ArchiveNote/ArchiveNote";

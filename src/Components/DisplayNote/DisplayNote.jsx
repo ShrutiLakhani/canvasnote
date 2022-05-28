@@ -1,7 +1,11 @@
 import "./DisplayNote.css";
 import { useNote } from "../../context/note-context";
+import { useTrash } from "../../context/trash-context";
+import { useArchive } from "../../context/archive-context";
 export function DisplayNote(item) {
   const { notes, setNotes, deleteNote } = useNote();
+  const { trashNote, setTrashNote } = useTrash();
+  const { archiveNote, setArchiveNote, addArchiveNote } = useArchive();
   const {
     _id,
     title,
@@ -15,13 +19,18 @@ export function DisplayNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
-  const handleAddtoTrash = (id) => {
+  const handleAddtoTrash = (id, item) => {
+    setTrashNote([...trashNote, item]);
     setNotes(notes.filter((note) => note._id !== id));
   };
   const handleEdit = (editData) => {
     setEditNoteValue(editData);
     setEditAddNote(false);
     setEditDisplayNote(true);
+  };
+  const addtoArchive = (id, item) => {
+    setArchiveNote([...archiveNote, item]);
+    setNotes(notes.filter((note) => note._id !== id));
   };
   return (
     <>
@@ -41,10 +50,15 @@ export function DisplayNote(item) {
             {/* <div>{date}</div> */}
           </div>
           <div className="btn-section">
-            <span class="material-symbols-outlined">archive</span>
             <span
               class="material-symbols-outlined"
-              onClick={() => handleAddtoTrash(_id)}
+              onClick={(e) => addtoArchive(_id, item)}
+            >
+              archive
+            </span>
+            <span
+              class="material-symbols-outlined"
+              onClick={() => handleAddtoTrash(_id, item)}
             >
               delete
             </span>
