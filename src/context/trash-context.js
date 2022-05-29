@@ -19,7 +19,6 @@ const TrashProvider = ({ children }) => {
         const {
           data: { notes },
         } = response;
-        console.log(response);
         setNotes(notes);
       }
     } catch (error) {

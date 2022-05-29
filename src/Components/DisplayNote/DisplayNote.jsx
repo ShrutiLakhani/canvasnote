@@ -47,7 +47,6 @@ export function DisplayNote(item) {
           <div className="dropdown-section">
             <div className="select-dropdown-label">{tag}</div>
             <div className="select-dropdown-priority">{priority}</div>
-            {/* <div>{date}</div> */}
           </div>
           <div className="btn-section">
             <span

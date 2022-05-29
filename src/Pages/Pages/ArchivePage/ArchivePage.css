@@ -1,16 +1,9 @@
 .style-notepage {
-  /* max-width: 1000px; */
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
   min-height: 100vh;
 }
-/* .container-input-notes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 .btn-note > a {
   color: var(--component-white-color);
 }

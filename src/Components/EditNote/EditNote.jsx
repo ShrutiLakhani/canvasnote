@@ -24,7 +24,7 @@ export function EditNote(item, edit) {
     tag: tag,
     priority: priority,
     date: date,
-    // selectedBackgroundColor: selectedBackgroundColor,
+    selectedBackgroundColor: selectedBackgroundColor,
   });
 
   const handleEdit = (e, editData, id) => {
