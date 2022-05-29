@@ -12,16 +12,16 @@ export function HomePage() {
     <>
       <div>
         <Sidebar />
-        {/* <div className="hero-img-home-container">
+        <div className="hero-img-home-container">
           <img className="hero-img-home" src={emptyNote} alt="blank-Img" />
         </div>
         <div className="overlay-text-home">
           <p>Create Notes</p>
-        </div> */}
-        <button className="btn-primary btn-note">
-          <Link to="/note">ADD NOTE</Link>
-        </button>
+        </div>
       </div>
+      <button className="home-btn-primary btn-note-home">
+        <Link to="/note">CREATE NOTE</Link>
+      </button>
     </>
   );
 }

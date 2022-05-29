@@ -1,12 +1,16 @@
-.btn-note > a {
+.btn-note-home > a {
   color: var(--component-white-color);
+  text-decoration: none;
 }
-.btn-note {
-  margin: 1rem 5rem;
-  padding: 1rem 3rem;
+.btn-note-home {
+  margin-top: 1rem;
+  margin: 0rem 1rem 0 1rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: var(--component-black-color);
 }
 .hero-img-home-container {
-  margin-top: -15rem;
+  margin-top: -10rem;
 }
 
 .hero-img-home {
