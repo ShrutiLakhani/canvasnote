@@ -46,7 +46,15 @@ export function DisplayNote(item) {
         <div className="note-card-bottom-section">
           <div className="dropdown-section">
             <div className="select-dropdown-label">{tag}</div>
-            <div className="select-dropdown-priority">{priority}</div>
+            <div className="select-dropdown-priority">
+              {priority === "1"
+                ? "High"
+                : priority === "2"
+                ? "Medium"
+                : priority === "3"
+                ? "Low"
+                : ""}
+            </div>
           </div>
           <div className="btn-section">
             <span

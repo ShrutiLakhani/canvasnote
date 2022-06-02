@@ -1,5 +1,7 @@
 import react from "react";
 import { useState } from "react";
+import { getNotes } from "../../../context/filter-context";
+import { useFilter } from "../../../context/filter-context";
 import {
   Sidebar,
   Navbar,
@@ -7,20 +9,24 @@ import {
   NoteCard,
   EditNote,
   TrashNote,
+  SortBy,
+  Filter,
 } from "../../../Components";
 import "./NotePage.css";
 import { useNote } from "../../../context/note-context";
 import { Link } from "react-router-dom";
 
 export function NotePage() {
+  const { filterState } = useFilter();
   const [editAddNote, setEditAddNote] = useState(false);
   const [editDisplayNote, setEditDisplayNote] = useState(false);
   const { notes, setNotes } = useNote();
   const [editNoteValue, setEditNoteValue] = useState({});
+  const finalNotesList = getNotes(filterState, notes);
+  console.log("finalList:", finalNotesList);
   console.log("notes", notes);
-  console.log("editDisplayNote", editDisplayNote);
-  console.log(editAddNote);
-  console.log("editNoteValue", editNoteValue);
+  console.log("filterState", filterState);
+
   return (
     <>
       <div className="style-notepage">
@@ -29,6 +35,8 @@ export function NotePage() {
         <div className="note-content-container">
           <div>
             <Sidebar />
+            <SortBy />
+            <Filter />
             <button
               className="btn-primary btn-note"
               onClick={() => {
@@ -53,7 +61,7 @@ export function NotePage() {
         </div>
 
         <div className="note-list">
-          {notes.map((item) => (
+          {finalNotesList.map((item) => (
             <DisplayNote
               {...item}
               editNoteValue={editNoteValue}

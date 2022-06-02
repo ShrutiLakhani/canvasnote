@@ -1,0 +1,29 @@
+.sort-by-filter {
+  position: relative;
+  margin-top: 2rem;
+}
+.sort-title {
+  padding: 1rem 2rem;
+  width: 10rem;
+}
+.sort-title:hover {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--component-container-color);
+  padding: 1rem 2rem;
+}
+.sort-options {
+  display: none;
+  padding: 7px;
+  background-color: var(--component-container-color);
+}
+.sort-options.display-dropdown {
+  display: flex;
+  gap: 1rem;
+}
+.sort-option {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

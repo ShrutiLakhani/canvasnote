@@ -11,7 +11,7 @@ export function NoteCard(item, edit) {
     title: "",
     description: "",
     tag: "Tag",
-    priority: "Priority",
+    priority: "3",
     date: "",
     selectedBackgroundColor: "#D5BDCB",
   });
@@ -57,11 +57,11 @@ export function NoteCard(item, edit) {
                 setNoteCard({ ...noteCard, tag: e.target.value });
               }}
             >
-              <option value="Label">Select Label</option>
+              <option value="Label">Select Labels</option>
               <option value="Home">Home</option>
               <option value="Work">Work</option>
               <option value="Personal">Personal</option>
-              <option value="In Progress">in Progress</option>
+              <option value="In Progress">In Progress</option>
               <option value="Completed">Completed</option>
             </select>
             <select
@@ -72,9 +72,9 @@ export function NoteCard(item, edit) {
               }}
             >
               <option value="">Select Priority</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value={1}>High</option>
+              <option value={2}>Medium</option>
+              <option value={3}>Low</option>
             </select>
 
             <ColorPalette

@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/auth-context";
 import { NoteProvider } from "./context/note-context";
 import { TrashProvider } from "./context/trash-context";
 import { ArchiveProvider } from "./context/archive-context";
+import { FilterProvider } from "./context/filter-context";
 
 // Call make Server
 makeServer();
@@ -15,15 +16,17 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <TrashProvider>
-        <ArchiveProvider>
-          <NoteProvider>
-            <AuthProvider>
-              <App />
-            </AuthProvider>
-          </NoteProvider>
-        </ArchiveProvider>
-      </TrashProvider>
+      <FilterProvider>
+        <TrashProvider>
+          <ArchiveProvider>
+            <NoteProvider>
+              <AuthProvider>
+                <App />
+              </AuthProvider>
+            </NoteProvider>
+          </ArchiveProvider>
+        </TrashProvider>
+      </FilterProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

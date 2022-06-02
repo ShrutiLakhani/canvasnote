@@ -5,6 +5,7 @@ const NoteContext = createContext();
 
 const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
+  const labelList = ["Home", "Work", "Personal", "InProgress", "Completed"];
   const addNote = async (noteText) => {
     const token = localStorage.getItem("userToken");
     try {
@@ -67,7 +68,7 @@ const NoteProvider = ({ children }) => {
   };
   return (
     <NoteContext.Provider
-      value={{ notes, setNotes, addNote, deleteNote, editNote }}
+      value={{ notes, setNotes, addNote, deleteNote, editNote, labelList }}
     >
       {children}
     </NoteContext.Provider>
