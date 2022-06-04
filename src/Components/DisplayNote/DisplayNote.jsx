@@ -2,6 +2,7 @@ import "./DisplayNote.css";
 import { useNote } from "../../context/note-context";
 import { useTrash } from "../../context/trash-context";
 import { useArchive } from "../../context/archive-context";
+
 export function DisplayNote(item) {
   const { notes, setNotes, deleteNote } = useNote();
   const { trashNote, setTrashNote } = useTrash();
@@ -19,6 +20,7 @@ export function DisplayNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
+  console.log(item);
   const handleAddtoTrash = (id, item) => {
     setTrashNote([...trashNote, item]);
     setNotes(notes.filter((note) => note._id !== id));
@@ -41,7 +43,10 @@ export function DisplayNote(item) {
       >
         <div className="note-input-container">
           <h5 className="note-title">{title}</h5>
-          <p className="note-description">{description}</p>
+          <p
+            className="note-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         </div>
         <div className="note-card-bottom-section">
           <div className="dropdown-section">
@@ -55,6 +60,7 @@ export function DisplayNote(item) {
                 ? "Low"
                 : ""}
             </div>
+            <div>{date}</div>
           </div>
           <div className="btn-section">
             <span

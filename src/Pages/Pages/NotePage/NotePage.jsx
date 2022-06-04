@@ -25,6 +25,7 @@ export function NotePage() {
   const finalNotesList = getNotes(filterState, notes);
   console.log("finalList:", finalNotesList);
   console.log("notes", notes);
+  console.log("getNotes", getNotes);
   console.log("filterState", filterState);
 
   return (

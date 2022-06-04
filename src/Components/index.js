@@ -9,3 +9,4 @@ export { TrashNote } from "./TrashNote/TrashNote";
 export { ArchiveNote } from "./ArchiveNote/ArchiveNote";
 export { SortBy } from "./SortBy/SortBy";
 export { Filter } from "./Filter/Filter";
+// export { RichTextEditor } from "./RichTextEditor";

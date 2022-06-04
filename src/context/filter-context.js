@@ -7,7 +7,6 @@ const initialFilterState = {
   labels: [],
   priority: "",
 };
-// console.log("label", label);
 
 const FilterProvider = ({ children }) => {
   const [filterState, filterDispatch] = useReducer(
@@ -47,10 +46,9 @@ const sortByPriority = ({ sortBy }, notes) => {
 };
 
 const filterByLabel = ({ labels }, notes) => {
-  console.log("labels", labels);
   return labels.length === 0
     ? notes
-    : notes.filter((note) => labels.includes(note.label));
+    : notes.filter((product) => labels.includes(product.tag));
 };
 const filterByPriority = ({ priority }, notes) => {
   return priority === ""
@@ -62,6 +60,7 @@ const applyFilters =
   (notes) => {
     return args.reduce((acc, curr) => {
       return curr(filterState, acc);
+      //   console.log("acc", acc);
     }, notes);
   };
 export const getNotes = (filterState, notes) =>

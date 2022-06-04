@@ -54,7 +54,10 @@ export function TrashNote(item) {
           className="note-input-container"
         >
           <h5 className="note-title">{title}</h5>
-          <p className="note-description">{description}</p>
+          <p
+            className="note-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         </div>
         <div className="note-card-bottom-section">
           <div className="btn-section">

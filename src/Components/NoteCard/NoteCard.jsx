@@ -1,10 +1,14 @@
 import react from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import "./NoteCard.css";
 import { useNote } from "../../context/note-context";
+// import { RichTextEditor } from "../RichTextEditor";
+import ReactQuill from "react-quill";
+import "../../../node_modules/react-quill/dist/quill.snow.css";
 
-export function NoteCard(item, edit) {
+export function NoteCard(item, edit, config) {
+  const [editor, setEditor] = useState("");
   const { setEditAddNote } = item;
   const { notes, setNotes, addNote, deleteNote } = useNote();
   const [noteCard, setNoteCard] = useState({
@@ -12,9 +16,17 @@ export function NoteCard(item, edit) {
     description: "",
     tag: "Tag",
     priority: "3",
-    date: "",
+    date: new Date().toLocaleDateString(),
     selectedBackgroundColor: "#D5BDCB",
   });
+  const [body, setBody] = useState("");
+  const updateInputCardDetails = () => {
+    setNoteCard({ ...noteCard, description: body });
+  };
+
+  useEffect(() => {
+    updateInputCardDetails();
+  }, [body]);
 
   const handleAddNote = (e, value) => {
     addNote(noteCard);
@@ -22,6 +34,21 @@ export function NoteCard(item, edit) {
     setEditAddNote(false);
   };
   console.log(noteCard);
+  const modules = {
+    toolbar: [
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image"],
+      ["clean"],
+    ],
+  };
+
   return (
     <>
       <div
@@ -39,16 +66,13 @@ export function NoteCard(item, edit) {
               setNoteCard({ ...noteCard, title: e.target.value });
             }}
           ></textarea>
-          <textarea
-            type="text"
-            row="2"
-            value={noteCard.description}
-            className="style-notecard-body"
-            placeholder="Add a note..."
-            onChange={(e) => {
-              setNoteCard({ ...noteCard, description: e.target.value });
-            }}
-          ></textarea>
+          <ReactQuill
+            theme="snow"
+            value={body}
+            onChange={setBody}
+            placeholder="Take a note..."
+            modules={modules}
+          />
           <div className="card-bottom-section">
             <select
               ClassName="notecard-select-dropdown-label"

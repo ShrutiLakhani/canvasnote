@@ -26,12 +26,29 @@ export function EditNote(item, edit) {
     date: date,
     selectedBackgroundColor: selectedBackgroundColor,
   });
+  const [body, setBody] = useState("");
+  const updateInputCardDetails = () => {
+    setNoteCard({ ...noteCard, description: body });
+  };
+
+  useEffect(() => {
+    updateInputCardDetails();
+  }, [body]);
 
   const handleEdit = (e, editData, id) => {
     editNote(id, editData);
     setEditDisplayNote(false);
   };
 
+  const modules = {
+    toolbar: [
+      [{ header: "1" }, { header: "2" }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link"],
+      ["clean"],
+    ],
+  };
   return (
     <>
       <div
@@ -49,16 +66,13 @@ export function EditNote(item, edit) {
               setEditCard({ ...editCard, title: e.target.value });
             }}
           ></textarea>
-          <textarea
-            type="text"
-            row="2"
-            value={editCard.description}
-            className="style-notecard-body"
-            placeholder="Add a note..."
-            onChange={(e) => {
-              setEditCard({ ...editCard, description: e.target.value });
-            }}
-          ></textarea>
+          <ReactQuill
+            theme="snow"
+            value={body}
+            onChange={setBody}
+            placeholder="Take a note..."
+            modules={modules}
+          />
           <div className="card-bottom-section">
             <select
               ClassName="select-dropdown-label"
