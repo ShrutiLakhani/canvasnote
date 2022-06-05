@@ -20,17 +20,14 @@ export function ArchiveNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
-  console.log("item", item);
   const { trashNote, setTrashNote, restoreTrash } = useTrash();
   const { notes, setNotes, deleteNote } = useNote();
   const { archiveNote, setArchiveNote } = useArchive();
   const handleAddtoTrash = (id, item) => {
-    console.log("Hey there");
     setTrashNote([...trashNote, item]);
     setArchiveNote(archiveNote.filter((note) => note._id !== id));
   };
   const restoreFromArchive = (id, item) => {
-    console.log("I am here too");
     setArchiveNote(archiveNote.filter((note) => note._id !== id));
     setNotes([...notes, item]);
   };
@@ -43,7 +40,10 @@ export function ArchiveNote(item) {
       >
         <div className="note-input-container">
           <h5 className="note-title">{title}</h5>
-          <p className="note-description  dangerouslySetInnerHTML={{ __html: description }}"></p>
+          <p
+            className="note-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         </div>
         <div className="note-card-bottom-section">
           <div className="btn-section">

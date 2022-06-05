@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import "./NoteCard.css";
 import { useNote } from "../../context/note-context";
-// import { RichTextEditor } from "../RichTextEditor";
 import ReactQuill from "react-quill";
 import "../../../node_modules/react-quill/dist/quill.snow.css";
 
@@ -16,7 +15,7 @@ export function NoteCard(item, edit, config) {
     description: "",
     tag: "Tag",
     priority: "3",
-    date: new Date().toLocaleDateString(),
+    date: new Date().toLocaleString(),
     selectedBackgroundColor: "#D5BDCB",
   });
   const [body, setBody] = useState("");
@@ -30,7 +29,7 @@ export function NoteCard(item, edit, config) {
 
   const handleAddNote = (e, value) => {
     addNote(noteCard);
-    setNoteCard({ title: "", description: "", date: "", color: "" });
+    setNoteCard({ title: "", description: "", date: "", time: "", color: "" });
     setEditAddNote(false);
   };
   console.log(noteCard);

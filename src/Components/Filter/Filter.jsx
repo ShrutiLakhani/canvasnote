@@ -10,7 +10,7 @@ export function Filter() {
   return (
     <div className="sort-by">
       <p
-        className="sort-title"
+        className="filter-title"
         onClick={() => setDisplayFilter(!displayFilter)}
       >
         Filter:
@@ -34,6 +34,7 @@ export function Filter() {
                 type="checkbox"
                 name="label"
                 value={label}
+                className="filter-input"
                 checked={filterState.labels.find(
                   (label) => label === { label }
                 )}
@@ -51,6 +52,7 @@ export function Filter() {
             <input
               type="checkbox"
               name="priority"
+              className="filter-input"
               checked={filterState.priority === "1"}
               value="1"
               onChange={(e) =>
@@ -63,6 +65,7 @@ export function Filter() {
             <input
               type="checkbox"
               name="priority"
+              className="filter-input"
               checked={filterState.priority === "2"}
               value="2"
               onChange={(e) =>
@@ -75,6 +78,7 @@ export function Filter() {
             <input
               type="checkbox"
               name="priority"
+              className="filter-input"
               checked={filterState.priority === "3"}
               value="3"
               onChange={(e) =>

@@ -1,8 +1,9 @@
 import "./EditNote.css";
 import react from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import { useNote } from "../../context/note-context";
+import ReactQuill from "react-quill";
 
 export function EditNote(item, edit) {
   const {
@@ -16,7 +17,6 @@ export function EditNote(item, edit) {
     setEditDisplayNote,
     setEditAddNote,
   } = item;
-  console.log("id", _id);
   const { editNote } = useNote();
   const [editCard, setEditCard] = useState({
     title: title,
@@ -28,7 +28,7 @@ export function EditNote(item, edit) {
   });
   const [body, setBody] = useState("");
   const updateInputCardDetails = () => {
-    setNoteCard({ ...noteCard, description: body });
+    setEditCard({ ...editCard, description: body });
   };
 
   useEffect(() => {
@@ -96,9 +96,9 @@ export function EditNote(item, edit) {
               }}
             >
               <option value="">Select Priority</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value={1}>High</option>
+              <option value={2}>Medium</option>
+              <option value={3}>Low</option>
             </select>
 
             <ColorPalette

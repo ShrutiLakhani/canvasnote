@@ -60,7 +60,6 @@ const applyFilters =
   (notes) => {
     return args.reduce((acc, curr) => {
       return curr(filterState, acc);
-      //   console.log("acc", acc);
     }, notes);
   };
 export const getNotes = (filterState, notes) =>

@@ -1,5 +1,5 @@
 .style-notepage {
-  /* max-width: 1000px; */
+  max-width: 68.75rem;
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
@@ -27,4 +27,11 @@
 }
 .main-page-title {
   margin: 1rem 0 1rem 0;
+}
+.sort-filter {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  right: 5rem;
+  top: 3rem;
 }

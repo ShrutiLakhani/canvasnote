@@ -36,8 +36,6 @@ export function NotePage() {
         <div className="note-content-container">
           <div>
             <Sidebar />
-            <SortBy />
-            <Filter />
             <button
               className="btn-primary btn-note"
               onClick={() => {
@@ -60,7 +58,12 @@ export function NotePage() {
             {editAddNote ? <NoteCard setEditAddNote={setEditAddNote} /> : ""}
           </div>
         </div>
-
+        {notes.length !== 0 && (
+          <div className="sort-filter">
+            <SortBy />
+            <Filter />
+          </div>
+        )}
         <div className="note-list">
           {finalNotesList.map((item) => (
             <DisplayNote

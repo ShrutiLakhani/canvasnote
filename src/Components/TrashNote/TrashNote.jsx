@@ -17,20 +17,9 @@ export function TrashNote(item) {
     setEditDisplayNote,
     setEditAddNote,
   } = item;
-  console.log("item", item);
   const { trashNote, setTrashNote, restoreTrash } = useTrash();
   const { notes, setNotes, deleteNote } = useNote();
-  //   const [editCard, setEditCard] = useState({
-  //     title: title,
-  //     description: description,
-  //     tag: tag,
-  //     priority: priority,
-  //     date: date,
-  //     selectedBackgroundColor: selectedBackgroundColor,
-  //   });
-
   const removeFromTrash = (id) => {
-    console.log("Trash here");
     setTrashNote(trashNote.filter((note) => note._id !== id));
   };
 
@@ -46,13 +35,7 @@ export function TrashNote(item) {
         style={{ backgroundColor: selectedBackgroundColor }}
         key={_id}
       >
-        <div
-          //       className="style-notecard-area"
-          //       style={{ backgroundColor: selectedBackgroundColor }}
-          //     >
-          div
-          className="note-input-container"
-        >
+        <div className="note-input-container">
           <h5 className="note-title">{title}</h5>
           <p
             className="note-description"
@@ -76,7 +59,6 @@ export function TrashNote(item) {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 }

@@ -32,7 +32,7 @@ export function SortBy() {
             filterDispatch({ type: "SORTBY", payload: "OLDEST-TO-NEWEST" })
           }
         >
-          oldest to Newest
+          Oldest to Newest
         </p>
 
         <div className="sort-option">Priority</div>

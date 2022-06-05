@@ -2,16 +2,17 @@
   position: relative;
   margin-top: 2rem;
 }
-.sort-title {
+.filter-title {
+  margin-top: 2rem;
   padding: 1rem 2rem;
-  width: 10rem;
+  width: 12rem;
 }
-.sort-title:hover {
+.filter-title:hover {
   cursor: pointer;
   border: none;
   border-radius: 10px;
   background-color: var(--component-container-color);
-  padding: 1rem 2rem;
+  width: 12rem;
 }
 .sort-options {
   display: none;
@@ -20,10 +21,19 @@
 }
 .sort-options.display-dropdown {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .sort-option {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+}
+.filter-input {
+  margin: 0rem 0.5rem 1rem 1.8rem;
+}
+.clear-filter {
+  padding: 0.6rem;
+  border-radius: 10px;
+  color: var(--component-white-color);
+  background-color: var(--component-black-color);
 }

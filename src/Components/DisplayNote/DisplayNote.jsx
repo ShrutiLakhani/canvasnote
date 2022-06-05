@@ -20,7 +20,6 @@ export function DisplayNote(item) {
     setEditAddNote,
     setEditDisplayNote,
   } = item;
-  console.log(item);
   const handleAddtoTrash = (id, item) => {
     setTrashNote([...trashNote, item]);
     setNotes(notes.filter((note) => note._id !== id));

@@ -43,12 +43,12 @@
   border: none;
 }
 .select-dropdown-label {
-  padding: 2px 5px;
+  padding: 5px;
   border: 1px solid black;
   border-radius: 10px;
 }
 .select-dropdown-priority {
-  padding: 2px 5px;
+  padding: 5px;
   border: 1px solid black;
   border-radius: 10px;
 }
