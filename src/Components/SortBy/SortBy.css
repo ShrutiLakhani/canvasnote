@@ -11,7 +11,6 @@
   border: none;
   border-radius: 10px;
   background-color: var(--component-container-color);
-  padding: 1rem 2rem;
 }
 .sort-options {
   display: none;
