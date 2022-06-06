@@ -1,7 +1,6 @@
 import react from "react";
 import { useState } from "react";
-import { getNotes } from "../../../context/filter-context";
-import { useFilter } from "../../../context/filter-context";
+import { getNotes, useFilter } from "../../../context/filter-context";
 import {
   Sidebar,
   Navbar,
@@ -31,8 +30,7 @@ export function NotePage() {
   return (
     <>
       <div className="style-notepage">
-        <h2 className="main-page-title">Your Notes</h2>
-        <div class="divider-underline"></div>
+        <div className="divider-underline"></div>
         <div className="note-content-container">
           <div>
             <Sidebar />

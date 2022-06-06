@@ -6,11 +6,11 @@ export function ColorPalette({ noteCard, setNoteCard }) {
   const colors = [
     "#d1d1d1",
     "#e1dbd6",
-    "#e2e2e2",
-    "#edf2fb",
-    "#d7e3fc",
+    "#9ab7d3",
+    "#f5d2d3",
+    "#f7e1d3",
     "#ccdbfd",
-    "#FF0000",
+    "#dfccf1",
   ];
   const [paletteDisplay, setPaletteDisplay] = useState(false);
   return (

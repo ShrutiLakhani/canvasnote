@@ -1,7 +1,6 @@
 import "./Filter.css";
 import { useState } from "react";
-import { useNote } from "../../context/note-context";
-import { useFilter } from "../../context/filter-context";
+import { useNote, useFilter } from "../../context/context";
 
 export function Filter() {
   const [displayFilter, setDisplayFilter] = useState(false);

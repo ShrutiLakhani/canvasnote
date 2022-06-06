@@ -1,7 +1,7 @@
-.display-note {
-  margin: 0 0 2rem 2rem;
+.archive-display-note {
+  margin: 0 2rem 2rem 2rem;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem;
   min-height: 15rem;
   display: flex;
   flex-direction: column;

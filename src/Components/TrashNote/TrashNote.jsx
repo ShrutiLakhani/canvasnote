@@ -2,8 +2,7 @@ import "./TrashNote.css";
 import react from "react";
 import { useState } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import { useNote } from "../../context/note-context";
-import { useTrash } from "../../context/trash-context";
+import { useNote, useTrash } from "../../context/context";
 
 export function TrashNote(item) {
   const {
@@ -31,7 +30,7 @@ export function TrashNote(item) {
   return (
     <>
       <div
-        className="display-note"
+        className="trash-display-note"
         style={{ backgroundColor: selectedBackgroundColor }}
         key={_id}
       >

@@ -2,9 +2,7 @@ import "./ArchiveNote.css";
 import react from "react";
 import { useState } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import { useNote } from "../../context/note-context";
-import { useTrash } from "../../context/trash-context";
-import { useArchive } from "../../context/archive-context";
+import { useNote, useTrash, useArchive } from "../../context/context";
 
 export function ArchiveNote(item) {
   const {
@@ -34,7 +32,7 @@ export function ArchiveNote(item) {
   return (
     <>
       <div
-        className="display-note"
+        className="archive-display-note"
         style={{ backgroundColor: selectedBackgroundColor }}
         key={_id}
       >

@@ -1,7 +1,5 @@
 import "./DisplayNote.css";
-import { useNote } from "../../context/note-context";
-import { useTrash } from "../../context/trash-context";
-import { useArchive } from "../../context/archive-context";
+import { useNote, useTrash, useArchive } from "../../context/context";
 
 export function DisplayNote(item) {
   const { notes, setNotes, deleteNote } = useNote();

@@ -1,8 +1,7 @@
-import react from "react";
-import { useState, useEffect } from "react";
+import react, { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import "./NoteCard.css";
-import { useNote } from "../../context/note-context";
+import { useNote } from "../../context/context";
 import ReactQuill from "react-quill";
 import "../../../node_modules/react-quill/dist/quill.snow.css";
 
@@ -68,6 +67,7 @@ export function NoteCard(item, edit, config) {
           <ReactQuill
             theme="snow"
             value={body}
+            className="style-notecard-body"
             onChange={setBody}
             placeholder="Take a note..."
             modules={modules}

@@ -1,8 +1,7 @@
 import "./EditNote.css";
-import react from "react";
-import { useState, useEffect } from "react";
+import react, { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import { useNote } from "../../context/note-context";
+import { useNote } from "../../context/context";
 import ReactQuill from "react-quill";
 
 export function EditNote(item, edit) {
@@ -26,7 +25,7 @@ export function EditNote(item, edit) {
     date: date,
     selectedBackgroundColor: selectedBackgroundColor,
   });
-  const [body, setBody] = useState("");
+  const [body, setBody] = useState(editCard.description);
   const updateInputCardDetails = () => {
     setEditCard({ ...editCard, description: body });
   };

@@ -22,12 +22,13 @@
   height: 1rem;
 }
 .style-notecard-body {
-  height: 4rem;
+  height: 8rem;
   white-space: pre-wrap;
 }
 .card-bottom-section {
   display: flex;
   justify-content: space-between;
+  height: 5rem;
 }
 
 .color-palette {
@@ -37,4 +38,14 @@
 
 .add-note-btn {
   font-size: 1rem;
+}
+.ql-toolbar.ql-snow {
+  border: none !important;
+}
+.ql-container.ql-snow {
+  border: none !important;
+}
+select {
+  margin-left: 2rem;
+  padding: 5px;
 }
