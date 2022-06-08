@@ -5,7 +5,6 @@ export function ArchivePage() {
   const { trashNote, setTrashNote } = useTrash();
   const { notes, setNotes } = useNote();
   const { archiveNote, setArchiveNote } = useArchive();
-  console.log("Comes");
   return (
     <div className="style-notepage">
       <div className="note-content-container">
