@@ -46,8 +46,6 @@ const NoteProvider = ({ children }) => {
 
   const editNote = async (noteId, note) => {
     const token = localStorage.getItem("userToken");
-    console.log("note", note);
-    console.log("noteId", noteId);
     try {
       const response = await axios.post(
         `api/notes/${noteId}`,

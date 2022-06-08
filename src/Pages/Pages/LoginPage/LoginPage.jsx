@@ -11,8 +11,8 @@ export function LoginPage() {
   const { loggedIn, setLoggedIn } = useAuth();
 
   const testUser = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "batmanmarvel@gmail.com",
+    password: "batmanMarvel123",
   };
 
   console.log(testUser);

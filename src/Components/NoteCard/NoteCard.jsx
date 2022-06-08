@@ -31,7 +31,7 @@ export function NoteCard(item, edit, config) {
     setNoteCard({ title: "", description: "", date: "", time: "", color: "" });
     setEditAddNote(false);
   };
-  console.log(noteCard);
+
   const modules = {
     toolbar: [
       ["bold", "italic", "underline", "strike", "blockquote"],
