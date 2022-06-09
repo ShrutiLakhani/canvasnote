@@ -31,7 +31,6 @@ export function NoteCard(item, edit, config) {
     setNoteCard({ title: "", description: "", date: "", time: "", color: "" });
     setEditAddNote(false);
   };
-
   const modules = {
     toolbar: [
       ["bold", "italic", "underline", "strike", "blockquote"],
@@ -46,7 +45,6 @@ export function NoteCard(item, edit, config) {
       ["clean"],
     ],
   };
-
   return (
     <>
       <div
