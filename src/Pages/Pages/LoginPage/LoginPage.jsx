@@ -15,8 +15,6 @@ export function LoginPage() {
     password: "adarshBalika123",
   };
 
-  console.log(testUser);
-
   const setUserData = (name) => {
     return ({ target: { value } }) => {
       setLoginData((oldValues) => ({ ...oldValues, [name]: value }));

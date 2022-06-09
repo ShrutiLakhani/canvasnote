@@ -5,7 +5,6 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import emptyNote from "../../../assets/Images/no-notes.svg";
 import "./HomePage.css";
-
 export function HomePage() {
   const { loggedIn, setLoggedIn } = useAuth();
   return (
