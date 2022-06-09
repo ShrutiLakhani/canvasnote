@@ -63,8 +63,7 @@
   background-size: 3rem;
   background-color: transparent;
   overflow: hidden;
-  margin-left: 1rem;
-  margin-top: 0.8rem;
+  margin: 0.8rem 0 0 1rem;
 }
 .nav-links {
   display: flex;

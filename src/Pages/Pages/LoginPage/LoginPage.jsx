@@ -11,8 +11,8 @@ export function LoginPage() {
   const { loggedIn, setLoggedIn } = useAuth();
 
   const testUser = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "batmanmarvel@gmail.com",
+    password: "batmanMarvel123",
   };
 
   const setUserData = (name) => {
@@ -43,7 +43,6 @@ export function LoginPage() {
   const guestLogin = (e) => {
     e.preventDefault();
     submitLoginData(testUser);
-    console.log("Comes");
   };
 
   return (

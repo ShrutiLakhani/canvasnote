@@ -7,7 +7,6 @@ import {
   HomePage,
   LandingPage,
   NotePage,
-  LabelPage,
   ArchivePage,
   TrashPage,
 } from "./Pages/Pages/index";
@@ -22,7 +21,6 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="home" element={<HomePage />} />
           <Route path="note" element={<NotePage />} />
-          <Route path="label" element={<LabelPage />} />
           <Route path="archive" element={<ArchivePage />} />
           <Route path="trash" element={<TrashPage />} />
         </Routes>

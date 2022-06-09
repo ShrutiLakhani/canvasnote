@@ -1,7 +1,6 @@
 import "./DisplayNote.css";
-import { useNote } from "../../context/note-context";
-import { useTrash } from "../../context/trash-context";
-import { useArchive } from "../../context/archive-context";
+import { useNote, useTrash, useArchive } from "../../context/context";
+
 export function DisplayNote(item) {
   const { notes, setNotes, deleteNote } = useNote();
   const { trashNote, setTrashNote } = useTrash();
@@ -41,12 +40,24 @@ export function DisplayNote(item) {
       >
         <div className="note-input-container">
           <h5 className="note-title">{title}</h5>
-          <p className="note-description">{description}</p>
+          <p
+            className="note-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         </div>
         <div className="note-card-bottom-section">
           <div className="dropdown-section">
             <div className="select-dropdown-label">{tag}</div>
-            <div className="select-dropdown-priority">{priority}</div>
+            <div className="select-dropdown-priority">
+              {priority === "1"
+                ? "High"
+                : priority === "2"
+                ? "Medium"
+                : priority === "3"
+                ? "Low"
+                : ""}
+            </div>
+            <div>{date}</div>
           </div>
           <div className="btn-section">
             <span

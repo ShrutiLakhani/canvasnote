@@ -2,8 +2,7 @@ import "./TrashNote.css";
 import react from "react";
 import { useState } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import { useNote } from "../../context/note-context";
-import { useTrash } from "../../context/trash-context";
+import { useNote, useTrash } from "../../context/context";
 
 export function TrashNote(item) {
   const {
@@ -17,11 +16,9 @@ export function TrashNote(item) {
     setEditDisplayNote,
     setEditAddNote,
   } = item;
-  console.log("item", item);
   const { trashNote, setTrashNote, restoreTrash } = useTrash();
   const { notes, setNotes, deleteNote } = useNote();
   const removeFromTrash = (id) => {
-    console.log("Trash here");
     setTrashNote(trashNote.filter((note) => note._id !== id));
   };
 
@@ -33,19 +30,16 @@ export function TrashNote(item) {
   return (
     <>
       <div
-        className="display-note"
+        className="trash-display-note"
         style={{ backgroundColor: selectedBackgroundColor }}
         key={_id}
       >
-        <div
-          //       className="style-notecard-area"
-          //       style={{ backgroundColor: selectedBackgroundColor }}
-          //     >
-          div
-          className="note-input-container"
-        >
+        <div className="note-input-container">
           <h5 className="note-title">{title}</h5>
-          <p className="note-description">{description}</p>
+          <p
+            className="note-description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         </div>
         <div className="note-card-bottom-section">
           <div className="btn-section">
@@ -64,7 +58,6 @@ export function TrashNote(item) {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 }

@@ -13,9 +13,9 @@ export const Sidebar = () => {
           </Link>
         </li>
         <li className="style-list-items">
-          <Link to="/label" className="style-list-items-icon">
-            <span class="material-symbols-outlined">label</span>
-            <span>Labels</span>
+          <Link to="/note" className="style-list-items-icon">
+            <span class="material-symbols-outlined">note</span>
+            <span>Notes</span>
           </Link>
         </li>
         <li className="style-list-items">

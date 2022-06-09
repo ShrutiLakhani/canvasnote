@@ -1,8 +1,8 @@
 import "./EditNote.css";
-import react from "react";
-import { useState } from "react";
+import react, { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
-import { useNote } from "../../context/note-context";
+import { useNote } from "../../context/context";
+import ReactQuill from "react-quill";
 
 export function EditNote(item, edit) {
   const {
@@ -25,12 +25,29 @@ export function EditNote(item, edit) {
     date: date,
     selectedBackgroundColor: selectedBackgroundColor,
   });
+  const [body, setBody] = useState(editCard.description);
+  const updateInputCardDetails = () => {
+    setEditCard({ ...editCard, description: body });
+  };
+
+  useEffect(() => {
+    updateInputCardDetails();
+  }, [body]);
 
   const handleEdit = (e, editData, id) => {
     editNote(id, editData);
     setEditDisplayNote(false);
   };
 
+  const modules = {
+    toolbar: [
+      [{ header: "1" }, { header: "2" }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link"],
+      ["clean"],
+    ],
+  };
   return (
     <>
       <div
@@ -48,16 +65,13 @@ export function EditNote(item, edit) {
               setEditCard({ ...editCard, title: e.target.value });
             }}
           ></textarea>
-          <textarea
-            type="text"
-            row="2"
-            value={editCard.description}
-            className="style-notecard-body"
-            placeholder="Add a note..."
-            onChange={(e) => {
-              setEditCard({ ...editCard, description: e.target.value });
-            }}
-          ></textarea>
+          <ReactQuill
+            theme="snow"
+            value={body}
+            onChange={setBody}
+            placeholder="Take a note..."
+            modules={modules}
+          />
           <div className="card-bottom-section">
             <select
               ClassName="select-dropdown-label"
@@ -81,9 +95,9 @@ export function EditNote(item, edit) {
               }}
             >
               <option value="">Select Priority</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value={1}>High</option>
+              <option value={2}>Medium</option>
+              <option value={3}>Low</option>
             </select>
 
             <ColorPalette

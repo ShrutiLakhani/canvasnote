@@ -1,25 +1,49 @@
-import react from "react";
-import { useState } from "react";
+import react, { useState, useEffect } from "react";
 import { ColorPalette } from "../ColorPalette/ColorPalette";
 import "./NoteCard.css";
-import { useNote } from "../../context/note-context";
+import { useNote } from "../../context/context";
+import ReactQuill from "react-quill";
+import "../../../node_modules/react-quill/dist/quill.snow.css";
 
-export function NoteCard(item, edit) {
+export function NoteCard(item, edit, config) {
+  const [editor, setEditor] = useState("");
   const { setEditAddNote } = item;
   const { notes, setNotes, addNote, deleteNote } = useNote();
   const [noteCard, setNoteCard] = useState({
     title: "",
     description: "",
     tag: "Tag",
-    priority: "Priority",
-    date: "",
+    priority: "3",
+    date: new Date().toLocaleString(),
     selectedBackgroundColor: "#D5BDCB",
   });
+  const [body, setBody] = useState("");
+  const updateInputCardDetails = () => {
+    setNoteCard({ ...noteCard, description: body });
+  };
+
+  useEffect(() => {
+    updateInputCardDetails();
+  }, [body]);
 
   const handleAddNote = (e, value) => {
     addNote(noteCard);
-    setNoteCard({ title: "", description: "", date: "", color: "" });
+    setNoteCard({ title: "", description: "", date: "", time: "", color: "" });
     setEditAddNote(false);
+  };
+  const modules = {
+    toolbar: [
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image"],
+      ["clean"],
+    ],
   };
   return (
     <>
@@ -38,16 +62,14 @@ export function NoteCard(item, edit) {
               setNoteCard({ ...noteCard, title: e.target.value });
             }}
           ></textarea>
-          <textarea
-            type="text"
-            row="2"
-            value={noteCard.description}
+          <ReactQuill
+            theme="snow"
+            value={body}
             className="style-notecard-body"
-            placeholder="Add a note..."
-            onChange={(e) => {
-              setNoteCard({ ...noteCard, description: e.target.value });
-            }}
-          ></textarea>
+            onChange={setBody}
+            placeholder="Take a note..."
+            modules={modules}
+          />
           <div className="card-bottom-section">
             <select
               ClassName="notecard-select-dropdown-label"
@@ -56,11 +78,11 @@ export function NoteCard(item, edit) {
                 setNoteCard({ ...noteCard, tag: e.target.value });
               }}
             >
-              <option value="Label">Select Label</option>
+              <option value="Label">Select Labels</option>
               <option value="Home">Home</option>
               <option value="Work">Work</option>
               <option value="Personal">Personal</option>
-              <option value="In Progress">in Progress</option>
+              <option value="In Progress">In Progress</option>
               <option value="Completed">Completed</option>
             </select>
             <select
@@ -71,9 +93,9 @@ export function NoteCard(item, edit) {
               }}
             >
               <option value="">Select Priority</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value={1}>High</option>
+              <option value={2}>Medium</option>
+              <option value={3}>Low</option>
             </select>
 
             <ColorPalette
