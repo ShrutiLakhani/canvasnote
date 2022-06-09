@@ -20,15 +20,6 @@ export function TrashNote(item) {
   console.log("item", item);
   const { trashNote, setTrashNote, restoreTrash } = useTrash();
   const { notes, setNotes, deleteNote } = useNote();
-  //   const [editCard, setEditCard] = useState({
-  //     title: title,
-  //     description: description,
-  //     tag: tag,
-  //     priority: priority,
-  //     date: date,
-  //     selectedBackgroundColor: selectedBackgroundColor,
-  //   });
-
   const removeFromTrash = (id) => {
     console.log("Trash here");
     setTrashNote(trashNote.filter((note) => note._id !== id));

@@ -21,7 +21,6 @@ export function NoteCard(item, edit) {
     setNoteCard({ title: "", description: "", date: "", color: "" });
     setEditAddNote(false);
   };
-  console.log(noteCard);
   return (
     <>
       <div

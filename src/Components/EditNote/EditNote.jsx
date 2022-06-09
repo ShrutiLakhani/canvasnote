@@ -16,7 +16,6 @@ export function EditNote(item, edit) {
     setEditDisplayNote,
     setEditAddNote,
   } = item;
-  console.log("id", _id);
   const { editNote } = useNote();
   const [editCard, setEditCard] = useState({
     title: title,
