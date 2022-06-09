@@ -66,6 +66,7 @@ export function NotePage() {
           {finalNotesList.map((item) => (
             <DisplayNote
               {...item}
+              key={item._id}
               editNoteValue={editNoteValue}
               setEditNoteValue={setEditNoteValue}
               setEditAddNote={setEditAddNote}
