@@ -55,7 +55,7 @@
 }
 
 .ecomm-logo-img {
-  background-image: url(../../assets/Images/CLogo.svg);
+  background-image: url("../../assets/Images/CLogo.svg");
   background-repeat: no-repeat;
   mix-blend-mode: multiply;
   width: 3rem;
