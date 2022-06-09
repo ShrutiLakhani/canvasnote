@@ -1,0 +1,16 @@
+.style-sidebar {
+  margin: 3rem 4rem;
+}
+.style-list-items {
+  margin: 2rem;
+  list-style: none;
+}
+.style-list-items-icon {
+  display: flex;
+  gap: 2rem;
+  color: var(--component-black-color);
+  font-size: large;
+}
+.style-list-items-icon Link :hover {
+  background-color: var(--component-container-color);
+}

@@ -5,14 +5,7 @@
   padding-left: 15px;
   min-height: 100vh;
 }
-.btn-note > a {
-  color: var(--component-white-color);
-}
-.btn-note {
-  margin: 1rem 1rem;
-  padding: 0.8rem;
-}
-.note-list {
+.style-notepage .note-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -21,9 +14,10 @@
 .note-content-container {
   display: flex;
 }
-.note-edit-container {
-  margin-left: 12rem;
-  margin-top: 2rem;
+.note-trash-container {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .main-page-title {
   margin: 1rem 0 1rem 0;

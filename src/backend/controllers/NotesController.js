@@ -116,6 +116,7 @@ export const updateNoteHandler = function (schema, request) {
     const { note } = JSON.parse(request.requestBody);
     const { noteId } = request.params;
     const noteIndex = user.notes.findIndex((note) => note._id === noteId);
+    console.log("note-controller", note);
     user.notes[noteIndex] = { ...user.notes[noteIndex], ...note };
     this.db.users.update({ _id: user._id }, user);
     return new Response(201, {}, { notes: user.notes });

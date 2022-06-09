@@ -33,7 +33,7 @@ export function SignupPage() {
         const userToken = data.encodedToken;
         setLoggedIn(true);
         localStorage.setItem("userToken", userToken);
-        navigate("/note");
+        navigate("/home");
       }
     } catch (error) {
       setSignUpError("An error occurred.");

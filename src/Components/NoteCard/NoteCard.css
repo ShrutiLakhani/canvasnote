@@ -1,0 +1,40 @@
+.style-notecard-area {
+  width: 40rem;
+  height: fit-content;
+  border: 2px solid none;
+  position: relative;
+  margin-top: 3rem;
+  background-color: transparent;
+}
+.container-note-card {
+  background-color: transparent;
+}
+
+.style-notecard-title,
+.style-notecard-body {
+  width: 100%;
+  border: none;
+  padding-right: 2rem;
+  outline: none;
+  resize: none;
+}
+.style-notecard-title {
+  height: 1rem;
+}
+.style-notecard-body {
+  height: 4rem;
+  white-space: pre-wrap;
+}
+.card-bottom-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-palette {
+  position: absolute;
+  font-size: 5rem;
+}
+
+.add-note-btn {
+  font-size: 1rem;
+}
