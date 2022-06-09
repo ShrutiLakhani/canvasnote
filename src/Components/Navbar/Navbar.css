@@ -1,0 +1,79 @@
+.icon-ecomm a > .far,
+.fas {
+  font-family: "Font Awesome 5 free";
+  color: var(--component-black-color);
+}
+
+.icon-ecomm > a > .material-icons {
+  font-size: 2rem;
+  color: var(--component-black-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  height: 100vh;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+}
+
+.header-outer {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: -2px;
+  height: 4.125rem;
+  width: 100%;
+  background-color: var(--main-background-color);
+  z-index: 999;
+  box-shadow: 3px 3px 12px 0 rgb(0 0 0 / 15%);
+}
+
+.header-inner {
+  height: 4.375rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.ecomm-navbar {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.nav-action-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.ecomm-logo-img {
+  background-image: url(../../assets/Images/CLogo.svg);
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  width: 3rem;
+  height: 3rem;
+  background-size: 3rem;
+  background-color: transparent;
+  overflow: hidden;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+}
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+.logout-btn {
+  margin-right: 2rem;
+}
