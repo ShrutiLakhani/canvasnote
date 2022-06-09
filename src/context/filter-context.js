@@ -33,12 +33,10 @@ const sortByDate = ({ sortBy }, notes) => {
 };
 
 const sortByPriority = ({ sortBy }, notes) => {
-  console.log("comes here");
   switch (sortBy) {
     case "HIGH-TO-LOW":
       return [...notes].sort((a, b) => [a.priority] - [b.priority]);
     case "LOW-TO-HIGH":
-      console.log(notes);
       return [...notes].sort((a, b) => b.priority - a.priority);
     default:
       return [...notes];

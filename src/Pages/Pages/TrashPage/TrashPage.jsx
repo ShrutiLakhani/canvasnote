@@ -3,7 +3,6 @@ import "./TrashPage.css";
 import { useTrash } from "../../../context/context";
 export function TrashPage() {
   const { trashNote, setTrashNote } = useTrash();
-  console.log("Comes");
   return (
     <div className="style-notepage">
       <div className="note-content-container">

@@ -15,8 +15,6 @@ export function LoginPage() {
     password: "batmanMarvel123",
   };
 
-  console.log(testUser);
-
   const setUserData = (name) => {
     return ({ target: { value } }) => {
       setLoginData((oldValues) => ({ ...oldValues, [name]: value }));
@@ -45,7 +43,6 @@ export function LoginPage() {
   const guestLogin = (e) => {
     e.preventDefault();
     submitLoginData(testUser);
-    console.log("Comes");
   };
 
   return (
