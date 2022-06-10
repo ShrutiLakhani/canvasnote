@@ -41,7 +41,7 @@ export function NoteCard(item, edit, config) {
         { indent: "-1" },
         { indent: "+1" },
       ],
-      ["link", "image"],
+      ["link"],
       ["clean"],
     ],
   };
